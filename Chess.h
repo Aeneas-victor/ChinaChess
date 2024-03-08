@@ -18,13 +18,21 @@ protected:
 
 	int begindown = 0;//是否第一次点击为棋子
 	POINT begin = { -1,-1 }, end = { -1,-1 };//存储下标
-	char RedOrBlack='R';
+	char RedOrBlack;//当前下棋方，每移动一次变化一次
+	char nowcolor;//下棋方，不可变
 	std::string _black[7] = { "車","马","象","士","将","炮","卒" };
 	std::string _red[7] = { "車","馬","相","仕","帥","炮","兵" };
 public:
 	bool GameOverx = false;
 	Chess();
 	~Chess();
+	SOCKET mySocket;
+	void receive(SOCKET recvClientSocket);
+	void mysend(SOCKET recvClientSocket);
+	void service();
+	void client();
+	void myconnect();
+
 	void Gameinit();//初始化
 	bool MoveChess();//移动
 	void Moveed();

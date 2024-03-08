@@ -67,7 +67,7 @@ void DrawBoard()
 	settextstyle(50, 25, "隶书");
 	setcolor(BLACK);
 	outtextxy(60, 290, ("楚河"));
-	outtextxy(60+5*CHESS_SIZE,290,("汉界"));
+	outtextxy(60+5*CHESS_SIZE,290, ("汉界"));
 	IMAGE judge;
 	loadimage(&judge, "resource\\judge.jpg", 309, 700, true);
 	putimage(610, -50, &judge);
